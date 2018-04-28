@@ -12,6 +12,8 @@
     "devDependencies": {
         "axios": "^0.17.1",
         "bootstrap-sass": "^3.3.7",
+        "buefy": "^0.6.5",
+        "bulma": "^0.7.1",
         "cross-env": "^5.1.4",
         "jquery": "^3.2",
         "laravel-mix": "^1.0",
@@ -19,7 +21,6 @@
         "vue": "^2.5.7"
     },
     "dependencies": {
-        "buefy": "^0.6.5",
         "vue-router": "^3.0.1"
     }
 }

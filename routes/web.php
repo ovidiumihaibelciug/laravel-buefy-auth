@@ -15,5 +15,5 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::prefix('api')->group(function () {
-    Route::post('/user', 'AuthenticationController@getAuthUser')->name('user');
+    Route::get('/user', 'AuthenticationController@getAuthUser')->name('user');
 });

@@ -1,4 +1,4 @@
-import ExampleComponent from "../components/ExampleComponent.vue";
+import ExampleComponent from "../containers/ExampleComponent.vue";
 import VueRouter from "vue-router";
 
 const router = new VueRouter({

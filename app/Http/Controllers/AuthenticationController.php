@@ -11,7 +11,7 @@ class AuthenticationController extends Controller
     function getAuthUser() {
         if (Auth::user()) {
             return response()->json([
-                'success' => false,
+                'success' => true,
                 'user' => Auth::user()
             ]);
         } else {
