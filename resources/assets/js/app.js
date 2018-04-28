@@ -1,22 +1,28 @@
+require("./bootstrap");
+import Vue from "vue";
+import Buefy from "buefy";
+import VueRouter from "vue-router";
+import router from "./routes/routes";
 
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
+Vue.use(Buefy);
+Vue.use(VueRouter);
 
-require('./bootstrap');
+Vue.component("root", require("./Main.vue"));
 
-window.Vue = require('vue');
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
-
-const app = new Vue({
-    el: '#app'
+window.vue = new Vue({
+  mounted() {
+    const _this = this;
+    axios.interceptors.response.use(
+      function(response) {
+        return response;
+      },
+      function(error) {
+        if (error.response.status === 404)
+          _this.$router.replace({ name: "404" });
+        return Promise.reject(error);
+      }
+    );
+  },
+  router,
+  el: "#app"
 });
